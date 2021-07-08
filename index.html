@@ -18,13 +18,12 @@
             <tbody>
                 <tr>
                     <td>minimal</td>
-                    <td>A minimal endpoint that implements every method Census expects
-                        but doesn't push data.</td>
+                    <td>An endpoint that stubs every method but doesn't push data</td>
                     <td>{{ site.environment.URL }}/.netlify/functions/minimal</td>
                 </tr>
                 <tr>
                     <td>postgres</td>
-                    <td>a fully functional integration that can write into PostgreSQL databases</td>
+                    <td>A basic integration that can write into PostgreSQL databases</td>
                     <td>{{ site.environment.URL }}/.netlify/functions/postgres</td>
                 </tr>
             </tbody>
@@ -35,8 +34,14 @@
             <li>Login to Census at <a href="//app.getcensus.com">app.getcensus.com</a></li>
             <li>Click on the <strong>Connections</strong> tab</li>
             <li>Click on <strong>Add Service</strong> and select <strong>Custom API</strong></li>
-            <li>Here you should enter the URL of the custom API you've created. 
-                You can paste the URLs of one of the integrations hosted on this server.</li>
+            <li>Paste the appropriate endpoint URL of the custom API</li>
         </ol>
+        <h2>Notes for PostgreSQL connection</h2>
+        <p>The code for a custom connector doesn't embed any credentials for accessing your
+           destination database. There's a few ways to provide these credentials when building
+           your own connectors (see our docs). In this basic setup, you should add credentials
+           to the environment in your 
+           <a href="//app.netlify.com/sites/{{ site.environment.SITE_NAME }}/settings/deploys#environment">Netlify Site Settings</a>
+        </p>
     </body>
 </html>
