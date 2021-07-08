@@ -7,12 +7,26 @@
     <body>
         <h1>Sample Census Custom Endpoints</h1>
         <p>You should have 2 integration endpoints available on this server.</p>
-        <p>The deploy URL is {{ site.environment.URL }}</p>
         <ul>
-            <li><a href="/.netlify/functions/minimal">minimal</a> – doesn't push data 
-                but implements every method that Census expects as a stub</li>
-            <li><a href="/.netlify/functions/postgres">postgres</a> – a fully functional
-                integration that can write into PostgreSQL databases</li>
+            <li>minimal – doesn't push data 
+                but implements every method that Census expects as a stub
+                <br />
+                Webhook URL: {{ site.environment.URL }}/.netlify/functions/minimal
+            </li>
+            <li>postgres – a fully functional
+                integration that can write into PostgreSQL databases
+                <br />
+                Webhook URL: {{ site.environment.URL }}/.netlify/functions/postgres
+            </li>
         </ul>
+        <h2>Installation & Testing Instructions</h2>
+        <p>These functions are currently deployed and waiting to be connected in Census</p>
+        <ol>
+            <li>Login to Census at <a href="app.getcensus.com">app.getcensus.com</a></li>
+            <li>Click on the <strong>Connections</strong> tab</li>
+            <li>Click on <strong>Add Service</strong> and select <strong>Custom API</strong></li>
+            <li>Here you should enter the URL of the custom API you've created. 
+                You can paste the URLs of one of the integrations hosted on this server.</li>
+        </ol>
     </body>
 </html>
