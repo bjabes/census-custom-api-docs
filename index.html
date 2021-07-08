@@ -7,7 +7,7 @@
     <body>
         <h1>Sample Census Custom Endpoints</h1>
         <p>You should have 2 integration endpoints available on this server.</p>
-        <p>The deploy URL is {{ site.deployUrl }}</p>
+        <p>The deploy URL is {{ site.environment.URL }}</p>
         <ul>
             <li><a href="/.netlify/functions/minimal">minimal</a> – doesn't push data 
                 but implements every method that Census expects as a stub</li>
