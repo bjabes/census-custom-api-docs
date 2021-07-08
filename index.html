@@ -6,23 +6,33 @@
     </head>
     <body>
         <h1>Sample Census Custom Endpoints</h1>
-        <p>You should have 2 integration endpoints available on this server.</p>
-        <ul>
-            <li>minimal – doesn't push data 
-                but implements every method that Census expects as a stub
-                <br />
-                Webhook URL: {{ site.environment.URL }}/.netlify/functions/minimal
-            </li>
-            <li>postgres – a fully functional
-                integration that can write into PostgreSQL databases
-                <br />
-                Webhook URL: {{ site.environment.URL }}/.netlify/functions/postgres
-            </li>
-        </ul>
+        <p>You should have the following integration endpoints available on this server.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Endpoint URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>minimal</td>
+                    <td>A minimal endpoint that implements every method Census expects
+                        but doesn't push data.</td>
+                    <td>{{ site.environment.URL }}/.netlify/functions/minimal</td>
+                </tr>
+                <tr>
+                    <td>postgres</td>
+                    <td>a fully functional integration that can write into PostgreSQL databases</td>
+                    <td>{{ site.environment.URL }}/.netlify/functions/postgres</td>
+                </tr>
+            </tbody>
+        </table>
         <h2>Installation & Testing Instructions</h2>
         <p>These functions are currently deployed and waiting to be connected in Census</p>
         <ol>
-            <li>Login to Census at <a href="app.getcensus.com">app.getcensus.com</a></li>
+            <li>Login to Census at <a href="//app.getcensus.com">app.getcensus.com</a></li>
             <li>Click on the <strong>Connections</strong> tab</li>
             <li>Click on <strong>Add Service</strong> and select <strong>Custom API</strong></li>
             <li>Here you should enter the URL of the custom API you've created. 
